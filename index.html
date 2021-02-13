@@ -5,19 +5,216 @@
   <title>mailchimp</title>
   <meta name="description" content="mailchimp">
   <meta name="author" content="mailchimp">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fillerink/notion.css@0.1.0/src/notion.css">
   <style>
+    /* styles copied from https://cdn.jsdelivr.net/npm/@fillerink/notion.css@0.1.0/src/notion.css */
+    body {
+      font-family: inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+      "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+      font-weight: 400;
+    }
+
+    button {
+      background-color: #f0f2f4;
+      color: #404b59;
+      border: 1px solid #f0f2f4;
+      box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px;
+      border-radius: 6px;
+      align-items: center;
+      height: fit-content;
+      min-width: 180px;
+      font-size: large;
+      font-weight: 400;
+      padding: 12px;
+    }
+
+    button:hover {
+      background-color: #66778c;
+      color: #fff;
+    }
+
+    button.primary {
+      background-color: #e16259;
+      color: #fff;
+      border: 1px solid rgb(190, 86, 67);
+      border-radius: 3px;
+      align-items: center;
+      height: fit-content;
+      min-width: 180px;
+      font-size: large;
+      font-weight: 400;
+      padding: 12px;
+    }
+
+    button.primary:hover {
+      background-color: #cf534a;
+      color: #fff;
+    }
+
+    form {
+      font-size: 16px;
+    }
+
+    input, textarea {
+      font-size: 16px;
+      padding: 8px;
+      margin: 10px auto;
+      width: 100%;
+    }
+
+    input[type="checkbox"] {
+      width: 15px;
+      height: 15px;
+      margin: 10px;
+    }
+
+    input[type="radio"] {
+      width: 15px;
+      height: 15px;
+      margin: 10px;
+    }
+
+    .code {
+      background-color: #f1f1f1;
+      padding: 15px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      margin-left: 5px;
+      margin-right: 5px;
+      font-size: 17px;
+      font-family: monospace;
+      border-radius: 3px;
+      line-height: 1.25;
+    }
+
+    pre {
+      padding: 0px;
+    }
+
+    blockquote {
+      background: #f9f9f9;
+      border-left: 10px solid #ccc;
+      margin: 1.5em 10px;
+      padding: 40px 20px;
+      quotes: "\201C""\201D""\2018""\2019";
+      font-size: 16px;
+      line-height: 150%;
+      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
+      "Helvetica Neue", Arial, sans-serif;
+      font-style: italic;
+    }
+    blockquote:before {
+      color: #ccc;
+      content: open-quote;
+      font-size: 4em;
+      line-height: 0.1em;
+      margin-right: 0.25em;
+      vertical-align: -0.4em;
+    }
+    blockquote p {
+      display: inline;
+    }
+
+    .nav {
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    .nav-left {
+      float: left;
+    }
+
+    .nav-right {
+      float: right;
+    }
+
+    /* Style the links inside the navigation bar */
+    .nav a {
+      float: left;
+      color: #37352f;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 450;
+    }
+
+    /* Add a color to the active/current link */
+    .nav a.active {
+      background-color: #fff;
+      color: #37352f;
+    }
+
+    /* Change the color of links on hover */
+    .nav a:hover {
+      background-size: 1px;
+      background-color: rgba(55, 53, 47, 0.08);
+      color: #37352f;
+    }
+
+    ul {
+      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
+      "Helvetica Neue", Arial, sans-serif;
+    }
+
+    li {
+      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
+      "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    table {
+      border: 1px solid #333;
+      border-collapse: collapse;
+      padding: 20px;
+    }
+
+    tr {
+      border: 1px solid #333;
+      padding: 10px;
+    }
+    tr:nth-child(even) {
+      background-color: #f1f1f1;
+    }
+
+    td {
+      border: 1px solid #333;
+      padding: 10px;
+    }
+
+    th {
+      border: 1px solid #333;
+      text-align: left;
+      padding: 20px;
+    }
+
+    /* custom styles */
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0 !important;
       padding: 0 !important;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     }
     .mc_embed_signup {
       width: 100%;
     }
     .mc-field-group {
+      flex: 0 0 calc(50% - 10px);
       display: flex;
       flex-direction: column;
+    }
+    .j-group {
+      display: flex;
+      justify-content: space-between;
+    }
+    .j-group-check {
+      flex: 0 0 50%;
+    }
+    .button {
+      width: auto;
+      margin: 10px auto;
+      display: block;      
     }
   </style>
 </head>
@@ -25,52 +222,59 @@
   <!-- Begin Mailchimp Signup Form -->
   <div id="mc_embed_signup">
     <form
-      action="https://gmail.us1.list-manage.com/subscribe/post?u=03e3ed1a25531ae33144532e0&amp;id=369ad13d46"
-      id="mc-embedded-subscribe-form"
-      name="mc-embedded-subscribe-form"
-      class="validate"
-      method="post"
-      novalidate
+    action="https://gmail.us1.list-manage.com/subscribe/post?u=03e3ed1a25531ae33144532e0&amp;id=369ad13d46"
+    id="mc-embedded-subscribe-form"
+    name="mc-embedded-subscribe-form"
+    class="validate"
+    method="post"
+    novalidate
     >
-      <div id="mc_embed_signup_scroll">
+    <div id="mc_embed_signup_scroll">
+      <div class="j-group">
         <div class="mc-field-group">
           <label for="mce-FNAME">Imię </label>
-          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+          <input required type="text" value="" name="FNAME" class="" id="mce-FNAME">
         </div>
         <div class="mc-field-group">
           <label for="mce-EMAIL">E-mail </label>
-          <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+          <input required type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
         </div>
-        <div class="mc-field-group input-group">
-          <strong>Tematy </strong>
-          <ul>
-            <li>
-              <input type="checkbox" value="1" name="group[77242][1]" id="mce-group[77242]-77242-0">
-              <label for="mce-group[77242]-77242-0">🛠 code</label>
-            </li>
-            <li>
-              <input type="checkbox" value="2" name="group[77242][2]" id="mce-group[77242]-77242-1">
-              <label for="mce-group[77242]-77242-1">⚙️ no-code</label>
-            </li>
-            <li>
-              <input type="checkbox" value="4" name="group[77242][4]" id="mce-group[77242]-77242-2">
-              <label for="mce-group[77242]-77242-2">🚀 startup</label>
-            </li>
-            <li>
-              <input type="checkbox" value="8" name="group[77242][8]" id="mce-group[77242]-77242-3">
-              <label for="mce-group[77242]-77242-3">📝 reports</label>
-            </li>
-          </ul>
-        </div>
-        <div id="mce-responses" class="clear">
-          <div class="response" id="mce-error-response" style="display:none"></div>
-          <div class="response" id="mce-success-response" style="display:none"></div>
-        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_03e3ed1a25531ae33144532e0_369ad13d46" tabindex="-1" value=""></div>
-        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
       </div>
-    </form>
-  </div>
-  <!--End mc_embed_signup-->
+      <div class="mc-field-group input-group">
+        <div class="j-group">
+          <div class="j-group-check">
+            <input checked type="checkbox" value="1" name="group[77242][1]" id="mce-group[77242]-77242-0">
+            <label for="mce-group[77242]-77242-0">🛠 code</label>
+          </div>
+          <div class="j-group-check">
+            <input checked type="checkbox" value="2" name="group[77242][2]" id="mce-group[77242]-77242-1">
+            <label for="mce-group[77242]-77242-1">⚙️ no-code</label>
+          </div>
+        </div>
+        <div class="j-group">
+          <div class="j-group-check">
+            <input checked type="checkbox" value="4" name="group[77242][4]" id="mce-group[77242]-77242-2">
+            <label for="mce-group[77242]-77242-2">🚀 startup</label>
+          </div>
+          <div class="j-group-check">
+            <input checked type="checkbox" value="8" name="group[77242][8]" id="mce-group[77242]-77242-3">
+            <label for="mce-group[77242]-77242-3">📝 reports</label>
+          </div>
+        </div>
+      </div>
+      <div id="mce-responses" class="clear">
+        <div class="response" id="mce-error-response" style="display:none"></div>
+        <div class="response" id="mce-success-response" style="display:none"></div>
+      </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+      <div style="position: absolute; left: -5000px;" aria-hidden="true">
+        <input type="text" name="b_03e3ed1a25531ae33144532e0_369ad13d46" tabindex="-1" value="">
+      </div>
+      <div class="clear">
+        <input type="submit" value="Zapisz się!" name="subscribe" id="mc-embedded-subscribe" class="button">
+      </div>
+    </div>
+  </form>
+</div>
+<!--End mc_embed_signup-->
 </body>
 </html>
