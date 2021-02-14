@@ -14,11 +14,10 @@
       color: rgb(55, 53, 47);
     }
 
-    button {
-      background-color: #f0f2f4;
-      color: #404b59;
-      border: 1px solid #f0f2f4;
-      box-shadow: rgba(15, 15, 15, 0.1) 0px 1px 2px;
+    .button {
+      background-color: #2eaadc;
+      color: white;
+      border: none;
       border-radius: 6px;
       align-items: center;
       height: fit-content;
@@ -26,33 +25,14 @@
       font-size: large;
       font-weight: 400;
       padding: 12px;
+      cursor: pointer;
+      width: auto;
+      margin: 20px auto;
+      display: block;      
     }
 
-    button:hover {
-      background-color: #66778c;
-      color: #fff;
-    }
-
-    button.primary {
-      background-color: #e16259;
-      color: #fff;
-      border: 1px solid rgb(190, 86, 67);
-      border-radius: 3px;
-      align-items: center;
-      height: fit-content;
-      min-width: 180px;
-      font-size: large;
-      font-weight: 400;
-      padding: 12px;
-    }
-
-    button.primary:hover {
-      background-color: #cf534a;
-      color: #fff;
-    }
-
-    form {
-      font-size: 16px;
+    .button:hover {
+      background-color: #00C2DD;
     }
 
     input, textarea {
@@ -68,127 +48,6 @@
       margin: 10px;
     }
 
-    input[type="radio"] {
-      width: 15px;
-      height: 15px;
-      margin: 10px;
-    }
-
-    .code {
-      background-color: #f1f1f1;
-      padding: 15px;
-      margin-top: 15px;
-      margin-bottom: 15px;
-      margin-left: 5px;
-      margin-right: 5px;
-      font-size: 17px;
-      font-family: monospace;
-      border-radius: 3px;
-      line-height: 1.25;
-    }
-
-    pre {
-      padding: 0px;
-    }
-
-    blockquote {
-      background: #f9f9f9;
-      border-left: 10px solid #ccc;
-      margin: 1.5em 10px;
-      padding: 40px 20px;
-      quotes: "\201C""\201D""\2018""\2019";
-      font-size: 16px;
-      line-height: 150%;
-      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
-      "Helvetica Neue", Arial, sans-serif;
-      font-style: italic;
-    }
-    blockquote:before {
-      color: #ccc;
-      content: open-quote;
-      font-size: 4em;
-      line-height: 0.1em;
-      margin-right: 0.25em;
-      vertical-align: -0.4em;
-    }
-    blockquote p {
-      display: inline;
-    }
-
-    .nav {
-      background-color: #fff;
-      overflow: hidden;
-    }
-
-    .nav-left {
-      float: left;
-    }
-
-    .nav-right {
-      float: right;
-    }
-
-    /* Style the links inside the navigation bar */
-    .nav a {
-      float: left;
-      color: #37352f;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 450;
-    }
-
-    /* Add a color to the active/current link */
-    .nav a.active {
-      background-color: #fff;
-      color: #37352f;
-    }
-
-    /* Change the color of links on hover */
-    .nav a:hover {
-      background-size: 1px;
-      background-color: rgba(55, 53, 47, 0.08);
-      color: #37352f;
-    }
-
-    ul {
-      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
-      "Helvetica Neue", Arial, sans-serif;
-    }
-
-    li {
-      font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans",
-      "Helvetica Neue", Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.5;
-    }
-
-    table {
-      border: 1px solid #333;
-      border-collapse: collapse;
-      padding: 20px;
-    }
-
-    tr {
-      border: 1px solid #333;
-      padding: 10px;
-    }
-    tr:nth-child(even) {
-      background-color: #f1f1f1;
-    }
-
-    td {
-      border: 1px solid #333;
-      padding: 10px;
-    }
-
-    th {
-      border: 1px solid #333;
-      text-align: left;
-      padding: 20px;
-    }
-
     /* custom styles */
     * {
       box-sizing: border-box;
@@ -202,21 +61,19 @@
       width: 100%;
     }
     .mc-field-group {
-      flex: 0 0 calc(50% - 10px);
+      flex: 0 0 50%;
       display: flex;
       flex-direction: column;
     }
     .j-group {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      max-width: 50%;
+      min-width: 280px;
+      margin: 0 auto;
     }
     .j-group-check {
       flex: 0 0 50%;
-    }
-    .button {
-      width: auto;
-      margin: 10px auto;
-      display: block;      
     }
   </style>
 </head>
@@ -243,24 +100,24 @@
         </div>
       </div>
       <div class="mc-field-group input-group">
-        <div class="j-group">
+        <div class="j-group" style="flex-direction: row">
           <div class="j-group-check">
             <input checked type="checkbox" value="1" name="group[77242][1]" id="mce-group[77242]-77242-0">
-            <label for="mce-group[77242]-77242-0">🛠 code</label>
+            <label for="mce-group[77242]-77242-0">🛠&nbsp;code</label>
           </div>
           <div class="j-group-check">
             <input checked type="checkbox" value="2" name="group[77242][2]" id="mce-group[77242]-77242-1">
-            <label for="mce-group[77242]-77242-1">⚙️ no-code</label>
+            <label for="mce-group[77242]-77242-1">⚙️&nbsp;no-code</label>
           </div>
         </div>
-        <div class="j-group">
+        <div class="j-group" style="flex-direction: row">
           <div class="j-group-check">
             <input checked type="checkbox" value="4" name="group[77242][4]" id="mce-group[77242]-77242-2">
-            <label for="mce-group[77242]-77242-2">🚀 startup</label>
+            <label for="mce-group[77242]-77242-2">🚀&nbsp;startup</label>
           </div>
           <div class="j-group-check">
             <input checked type="checkbox" value="8" name="group[77242][8]" id="mce-group[77242]-77242-3">
-            <label for="mce-group[77242]-77242-3">📝 reports</label>
+            <label for="mce-group[77242]-77242-3">📝&nbsp;reports</label>
           </div>
         </div>
       </div>
